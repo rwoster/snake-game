@@ -12,6 +12,9 @@ let score = 0;
 let intervalTime = 1000;
 const speed = 0.9;
 let timerId;
+let isAlive = false;
+
+startBtn.textContent = "START GAME";
 
 function createGrid() {
     for (let i = 0; i < width * width; i++) {
@@ -24,6 +27,10 @@ function createGrid() {
 createGrid();
 
 function startGame() {
+    isAlive = true;
+    isAlive
+        ? (startBtn.textContent = "RESTART")
+        : (startBtn.textContent = "START GAME");
     gameOverEl.style.display = "none";
     currentSnake.forEach((index) =>
         squares[index].classList.remove("snake")
@@ -85,7 +92,6 @@ function move() {
 
     squares[currentSnake[0]].classList.add("snake");
 }
-move();
 
 function generateApples() {
     do {
@@ -96,6 +102,7 @@ function generateApples() {
 
 function gameOver() {
     clearInterval(timerId);
+    isAlive = false;
     gameOverEl.style.display = "block";
 }
 

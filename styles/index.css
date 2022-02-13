@@ -6,43 +6,55 @@ body {
     flex-direction: column;
     background-color: #ccc;
     text-align: center;
+    font-family: "Bebas Neue";
 }
 
+h1 {
+    font-size: 52px;
+    margin: 40px 0 0;
+}
+h2 {
+    margin: 10px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#score {
+    color: #8b1d90;
+    font-size: 45px;
+    padding-left: 5px;
+}
 .game-over {
     display: none;
+    font-size: 32px;
+    margin: 10px;
+    color: #901d36;
 }
 
-/*                                                   */
 /* BUTTON */
-.btn-grad {
+.btn {
     align-self: center;
     width: fit-content;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 15px 25px;
+    font-size: 18px;
+    padding: 10px 20px;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    box-shadow: 0 0 20px #eee;
+    color: #fff099;
+    box-shadow: 0 0 10px #333;
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(
-        to right,
-        #614385 0%,
-        #516395 51%,
-        #614385 100%
-    );
+    background-color: rgb(109, 140, 48);
+}
+.btn:hover,
+.btn:active {
+    box-shadow: 0 0 15px #8b1d90;
+    border: none;
+}
+.btn:focus {
+    outline: none;
 }
 
-.btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-}
-
-/*                                                    */
 /* GRID */
 .grid {
     width: 200px;
@@ -50,17 +62,18 @@ body {
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .square {
     width: 20px;
     height: 20px;
-    background-color: #5163955f;
+    background-color: #bdae58;
 }
 
 .snake {
-    background-color: #614385;
+    background-color: #8a891f;
 }
 .apple {
-    background-color: rgb(79, 181, 79);
+    background-color: #8b1d90;
 }
